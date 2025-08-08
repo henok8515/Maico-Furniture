@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
 import Logo from "../assets/images/logo.png";
 import { footer } from "../data";
 
@@ -20,10 +19,10 @@ const Footer = () => {
     <footer className="section bg-gray-50">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row justify-between border-b border-opacity-75 border-gray-700 pb-7 lg:pb-14 mb-14">
-          <a href="#" className="mb-6 lg:mb-0">
-            <img className="h-20 " src={Logo} alt="Logo" />
+          <a href="#" className=" lg:mb-0">
+            <img className="lg:h-16 sm:h-4 " src={Logo} alt="Logo" />
           </a>
-          <div className="flex gap-x-4">{socialLink}</div>
+          <div className="flex justify-center gap-x-4">{socialLink}</div>
         </div>
         <div className="text-primary text-center">&copy; {copyright}</div>
       </div>

@@ -42,7 +42,7 @@ const Header = () => {
           </a>
           <div
             onClick={() => setMobileNav(!mobileNav)}
-            className="text-2xl text-white md:hidden lg:text-3xl cursor-pointer"
+            className="text-2xl text-primary md:hidden lg:text-3xl cursor-pointer"
           >
             {mobileNavMenu}
           </div>
