@@ -10,14 +10,14 @@ const Header = () => {
   const [mobileNav, setMobileNav] = useState(false);
 
   // Conditional Elements | Styling |:
-  const bgStyle = bg ? "bg-primary py-4 lg:py-6" : "bg-none";
+  const bgStyle = bg ? "  bg-gray-50 py-4 lg:py-6" : "bg-none";
   const mobileNavMenu = mobileNav ? <CgClose /> : <CgMenuRight />;
   const mobileNavMenuStyle = mobileNav ? "left-0" : "-left-full";
   const navItems = navigation.map((item, index) => (
     <li key={index}>
       <a
         href={item.href}
-        className={`text-white capitalize hover:border-b transition-all`}
+        className={`text-primary capitalize hover:border-b transition-all`}
       >
         {item.name}
       </a>

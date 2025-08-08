@@ -17,15 +17,15 @@ const Footer = () => {
     );
   });
   return (
-    <footer className="section bg-primary">
+    <footer className="section bg-gray-50">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row justify-between border-b border-opacity-75 border-gray-700 pb-7 lg:pb-14 mb-14">
           <a href="#" className="mb-6 lg:mb-0">
-            <img src={Logo} alt="Logo" />
+            <img className="h-20 " src={Logo} alt="Logo" />
           </a>
           <div className="flex gap-x-4">{socialLink}</div>
         </div>
-        <div className="text-white text-center">&copy; {copyright}</div>
+        <div className="text-primary text-center">&copy; {copyright}</div>
       </div>
     </footer>
   );
