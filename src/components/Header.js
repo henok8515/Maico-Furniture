@@ -27,7 +27,7 @@ const Header = () => {
   // Controlling the Scrolling Effect:
   useEffect(() => {
     document.addEventListener("scroll", () =>
-      window.scrollY > 50 ? setBg(true) : setBg(false)
+      window.scrollY > 50 ? setBg(true) : setBg(true)
     );
   });
 

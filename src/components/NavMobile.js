@@ -6,7 +6,7 @@ const NavMobile = () => {
     <li key={index}>
       <a
         href={item.href}
-        className={`text-white capitalize hover:border-b transition-all`}
+        className={`text-black capitalize hover:border-b transition-all`}
       >
         {item.name}
       </a>
