@@ -7,6 +7,7 @@ import {
   IoMdAddCircle,
   IoIosCheckmarkCircle,
   IoIosArrowRoundForward,
+  IoMdCart,
 } from "react-icons/io";
 
 // import images
@@ -30,6 +31,7 @@ import TestimonialImg from "./assets/images/testimonial.png";
 import Avatar1Img from "./assets/images/avatar-1.png";
 import Avatar2Img from "./assets/images/avatar-2.png";
 import Avatar3Img from "./assets/images/avatar-3.png";
+import CartIcon from "./components/CartIcon";
 
 export const navigation = [
   {
@@ -47,6 +49,10 @@ export const navigation = [
   {
     name: "contact",
     href: "contact",
+  },
+  {
+    name: <CartIcon />,
+    href: "/cart",
   },
 ];
 
