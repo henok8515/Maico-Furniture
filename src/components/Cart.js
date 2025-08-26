@@ -91,7 +91,7 @@ const Cart = () => {
                   key={item.id}
                   className="flex flex-col lg:flex-row items-center py-6 border-b border-gray-200 gap-6 w-full"
                 >
-                  <div className="img-box max-lg:w-full">
+                  <div className="img-box max-lg:w-2/3 object-contain">
                     <img
                       src={item.image.type}
                       alt={item.name}
@@ -127,7 +127,7 @@ const Cart = () => {
                         <div className="col-span-5 lg:col-span-2 flex items-center">
                           <button
                             onClick={() => removeItem(item.price)}
-                            className="rounded-full py-2 px-4 font-semibold text-sm leading-7 text-white bg-red-600 transition-all duration-500 hover:bg-red-700"
+                            className="rounded-full py-2 px-4 max-lg:px2 font-semibold text-sm leading-7 text-white bg-red-600 transition-all duration-500 hover:bg-red-700"
                           >
                             Remove
                           </button>
