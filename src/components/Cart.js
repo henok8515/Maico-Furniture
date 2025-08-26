@@ -78,12 +78,12 @@ const Cart = () => {
                   Order Summary
                 </p>
               </div>
-              <button
-                onClick={clearCart}
+              <Link
                 className="rounded-full py-3 px-7 font-semibold text-sm leading-7 text-white bg-indigo-600 max-lg:mt-5 shadow-sm transition-all duration-500 hover:bg-indigo-700"
+                to="/"
               >
-                Clear Cart
-              </button>
+                GoBack
+              </Link>
             </div>
             <div className="w-full px-3 min-[400px]:px-6">
               {state.cartItems.map((item) => (
@@ -138,7 +138,7 @@ const Cart = () => {
                 </div>
               ))}
             </div>
-            <p className="font-semibold text-base leading-7 text-black">
+            <p className="m-4 font-semibold text-base leading-7 text-black">
               Send Us The Item You want through an Email
             </p>
             <input
@@ -146,14 +146,20 @@ const Cart = () => {
               onChange={handleEmailChange}
               required
               type="email"
-              className="bg-gray-50 mt-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              className=" m-3 max-lg:w-3/4 bg-gray-50 mt-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2  p-2.5"
               placeholder="Enter your email"
             />
             <button
               onClick={sendEmail}
-              className="rounded-full mt-2 py-3 px-7 font-semibold text-sm leading-7 text-white bg-indigo-600 transition-all duration-500 hover:bg-indigo-700"
+              className="rounded-full self-center  py-3 px-7 font-semibold text-sm leading-7 text-white bg-indigo-600 transition-all duration-500 hover:bg-indigo-700"
             >
               Send Cart Items
+            </button>
+            <button
+              onClick={clearCart}
+              className="ml-3 self-center  mb-3 rounded-full py-3 px-7 font-semibold text-sm leading-7 text-white bg-indigo-600 max-lg:mt-5 shadow-sm transition-all duration-500 hover:bg-indigo-700"
+            >
+              Clear Cart
             </button>
           </div>
         )}
