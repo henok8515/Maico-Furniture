@@ -23,7 +23,7 @@ const ProductSlider = () => {
   const addToCart = (item) => {
     dispatch({ type: "ADD_ITEM", payload: item });
     console.log("Item added:", item); // Log the item being added
-    console.log("Current cart items:", state.cartItems);
+
     alert(`${item.name} added to cart!`);
   };
 

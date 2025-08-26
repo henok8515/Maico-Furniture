@@ -7,6 +7,8 @@ const SendEmailButton = () => {
 
   const handleSendEmail = () => {
     sendEmail(state.cartItems);
+    console.log(state.cartItems);
+    alert("emailSent");
   };
 
   return (

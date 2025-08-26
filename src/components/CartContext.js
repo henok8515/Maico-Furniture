@@ -1,14 +1,11 @@
-import React, { createContext, useContext, useReducer } from "react";
+import React, { createContext, useReducer, useContext, useEffect } from "react";
 
-// Initial state
-const initialState = {
-  cartItems: [],
-};
-console.log(initialState, "initial stat");
-// Create a context
 const CartContext = createContext();
 
-// Reducer function to manage cart state
+const initialState = {
+  cartItems: JSON.parse(localStorage.getItem("cartItems")) || [], // Load from local storage
+};
+
 const cartReducer = (state, action) => {
   switch (action.type) {
     case "ADD_ITEM":
@@ -17,17 +14,23 @@ const cartReducer = (state, action) => {
       return {
         ...state,
         cartItems: state.cartItems.filter(
-          (item) => item.id !== action.payload.id
-        ),
+          (item) => item.price !== action.payload.id
+        ), // Removes only the specified item
       };
+    case "CLEAR_CART":
+      return { ...state, cartItems: [] };
     default:
       return state;
   }
 };
 
-// Provider component
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState);
+
+  // Save cartItems to local storage whenever they change
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+  }, [state.cartItems]);
 
   return (
     <CartContext.Provider value={{ state, dispatch }}>
@@ -36,7 +39,6 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use the CartContext
 export const useCart = () => {
   return useContext(CartContext);
 };

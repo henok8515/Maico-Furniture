@@ -1,15 +1,16 @@
 import React from "react";
 import { navigation } from "../data";
+import { Link } from "react-router-dom";
 
 const NavMobile = () => {
   const navItems = navigation.map((item, index) => (
     <li key={index}>
-      <a
-        href={item.href}
+      <Link
+        to={item.href}
         className={`text-black capitalize hover:border-b transition-all`}
       >
         {item.name}
-      </a>
+      </Link>
     </li>
   ));
 

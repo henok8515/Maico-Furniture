@@ -10,7 +10,7 @@ const Header = () => {
   const [mobileNav, setMobileNav] = useState(false);
 
   // Conditional Elements | Styling |:
-  const bgStyle = bg ? "  bg-gray-50 py-4 lg:py-6" : "bg-none";
+  const bgStyle = bg ? "  bg-gray-50 py-4 lg:py-6" : "bg-white";
   const mobileNavMenu = mobileNav ? <CgClose /> : <CgMenuRight />;
   const mobileNavMenuStyle = mobileNav ? "left-0" : "-left-full";
   const navItems = navigation.map((item, index) => (
@@ -25,11 +25,11 @@ const Header = () => {
   ));
 
   // Controlling the Scrolling Effect:
-  useEffect(() => {
-    document.addEventListener("scroll", () =>
-      window.scrollY > 50 ? setBg(true) : setBg(true)
-    );
-  });
+  // useEffect(() => {
+  //   document.addEventListener("scroll", () =>
+  //     window.scrollY > 0 ? setBg(true) : setBg(true)
+  //   );
+  // });
 
   return (
     <section

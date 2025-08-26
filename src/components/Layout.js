@@ -1,5 +1,4 @@
-// Layout.js
-import React from "react";
+import React, { useRef } from "react";
 import Header from "./Header";
 import Hero from "./Hero";
 import Features from "./Features";
@@ -10,15 +9,25 @@ import NewsLetters from "./NewsLetters";
 import Footer from "./Footer";
 
 const Layout = () => {
+  const sectionRef = useRef(null);
+
+  const scrollToSection = () => {
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.error("Ref is null.");
+    }
+  };
+
   return (
     <>
       <Header />
-      <Hero />
+      <Hero scrollToSection={scrollToSection} />
       <Features />
       <NewItems />
       <FeaturesSecond />
-      <Products />
-      <NewsLetters />
+      <Products ref={sectionRef} /> {/* Pass the ref here */}
+      {/* <NewsLetters /> */}
       <Footer />
     </>
   );
