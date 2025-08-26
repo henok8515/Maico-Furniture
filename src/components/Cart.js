@@ -1,15 +1,15 @@
-"use client";
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { useCart } from "./CartContext";
 import { Link } from "react-router-dom";
+import Alert from "./Alert";
 
 const Cart = () => {
   const { state, dispatch } = useCart();
   const [email, setEmail] = useState("");
+  const [showAlert, setShowAlert] = useState(false);
 
   const removeItem = (itemId) => {
-    console.log(itemId);
     dispatch({ type: "REMOVE_ITEM", payload: { id: itemId } });
   };
 
@@ -29,6 +29,8 @@ const Cart = () => {
     const templateParams = {
       email: email,
       items: cartItems,
+      // Add additional recipient emails here
+      additional_emails: "recipient1@example.com, recipient2@example.com",
     };
 
     emailjs
@@ -41,9 +43,9 @@ const Cart = () => {
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
-          alert(`Email sent By ${email} with items: ${cartItems}`);
+          setShowAlert(true);
           // Optionally clear the cart after sending
-          // clearCart();
+          clearCart();
         },
         (error) => {
           console.log("FAILED...", error);
@@ -52,8 +54,21 @@ const Cart = () => {
       );
   };
 
+  const handleCloseAlert = () => {
+    setShowAlert(false);
+  };
+
   return (
     <section className="py-24 relative">
+      <div>
+        {showAlert && (
+          <Alert
+            message="Something seriously bad happened."
+            onClose={handleCloseAlert}
+          />
+        )}
+      </div>
+
       <div className="w-full max-w-7xl px-4 md:px-5 lg:px-6 mx-auto">
         <h2 className="font-manrope font-bold text-4xl leading-10 text-black text-center">
           Cart Summary
