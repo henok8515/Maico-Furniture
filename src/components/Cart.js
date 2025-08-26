@@ -157,7 +157,7 @@ const Cart = () => {
             </button>
             <button
               onClick={clearCart}
-              className="ml-3 self-center  mb-3 rounded-full py-3 px-7 font-semibold text-sm leading-7 text-white bg-indigo-600 max-lg:mt-5 shadow-sm transition-all duration-500 hover:bg-indigo-700"
+              className="ml-3 self-center  mb-3 rounded-full py-3 px-7 font-semibold text-sm leading-7 text-white bg-red-600 max-lg:mt-5 shadow-sm transition-all duration-500 hover:bg-indigo-700"
             >
               Clear Cart
             </button>
